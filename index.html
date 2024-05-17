@@ -3,12 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Gamified Site</title>
+    <title>Better Relax</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    
 <body>
-    <h1>Welcome to My Gamified Site</h1>
-    <!-- Add your HTML content here -->
+    <div class="container">
+        <h1>Better Relax</h1>
+        <h2>Where you can choose different ways to rest your mind</h2>
+
+        <div class="points">
+            Points: <span id="points">0</span>
+        </div>
+
+        <div class="controls">
+            <div>
+                <label for="backgrounds">Choose Background:</label>
+                <select id="backgrounds">
+                    <option value="bg1">Background 1</option>
+                    <option value="bg2">Background 2</option>
+                    <option value="bg3">Background 3</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="sounds">Choose Sound:</label>
+                <select id="sounds">
+                    <option value="sound1">Sound 1</option>
+                    <option value="sound2">Sound 2</option>
+                    <option value="sound3">Sound 3</option>
+                </select>
+                <button id="play-sound">Play Sound</button>
+                <button id="stop-sound">Stop Sound</button>
+            </div>
+
+            <div>
+                <button id="toggle-mode">Toggle Night/Light Mode</button>
+            </div>
+        </div>
+
+        <div class="achievements">
+            <h2>Achievements</h2>
+            <ul id="achievements-list">
+                <!-- Achievements will be listed here -->
+            </ul>
+        </div>
+    </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>
