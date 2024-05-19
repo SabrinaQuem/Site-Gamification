@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Better Relax</title>
     <link rel="stylesheet" href="styles.css">
-    
+</head>
 <body>
-    <div class="container">
+    <div class="header">
         <h1>Better Relax</h1>
         <h2>Where you can choose different ways to rest your mind</h2>
-
+    </div>
+    
+    <div class="container">
         <div class="points">
             Points: <span id="points">0</span>
         </div>
@@ -19,21 +21,22 @@
             <div>
                 <label for="backgrounds">Choose Background:</label>
                 <select id="backgrounds">
-                    <option value="bg1">Background 1</option>
-                    <option value="bg2">Background 2</option>
-                    <option value="bg3">Background 3</option>
+                    <option value="bg1">Relaxing Rain</option>
+                    <option value="bg2">Relaxing Ocean</option>
+                    <option value="bg3">Relaxing Night Sky with Stars</option>
                 </select>
             </div>
 
-            <div>
-                <label for="sounds">Choose Sound:</label>
-                <select id="sounds">
-                    <option value="sound1">Sound 1</option>
-                    <option value="sound2">Sound 2</option>
-                    <option value="sound3">Sound 3</option>
-                </select>
-                <button id="play-sound">Play Sound</button>
-                <button id="stop-sound">Stop Sound</button>
+            <div class="sound-buttons">
+                <button id="sound1" class="sound-button">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/rain.png" alt="Rain">
+                </button>
+                <button id="sound2" class="sound-button">
+                    <img src="https://static.thenounproject.com/png/5192010-200.png" alt="Ocean">
+                </button>
+                <button id="sound3" class="sound-button">
+                    <img src="https://png.pngtree.com/png-vector/20230314/ourmid/pngtree-night-icon-vector-png-image_6647395.png" alt="Night">
+                </button>
             </div>
 
             <div>

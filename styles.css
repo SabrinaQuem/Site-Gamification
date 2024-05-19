@@ -2,22 +2,36 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #98b1f0;
     color: #000000;
     transition: background-color 0.3s, color 0.3s;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 body.night-mode {
-    background-color: #2c3e50;
+    background-color: #37164d;
     color: #ecf0f1;
+}
+
+.header {
+    position: relative;
+    height: 200px; /* Adjust as needed */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header h1, .header h2 {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
 }
 
 .container {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .points {
@@ -39,6 +53,39 @@ select, button {
     width: 200px;
 }
 
+.sound-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.sound-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: transform 0.2s;
+}
+
+.sound-button img {
+    width: 50px;
+    height: 50px;
+}
+
+.sound-button.active img {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+@keyframes glowing {
+    0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+    100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+}
+
+.sound-button.active img {
+    animation: glowing 1.5s infinite;
+}
+
 .achievements {
     margin-top: 30px;
 }
@@ -53,8 +100,9 @@ select, button {
 }
 
 .achievements li {
-    background: #f4f4f4;
+    background: #089f24;
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
 }
+
