@@ -91,7 +91,7 @@ select, button {
 }
 
 .sound-button.locked {
-    animation: locked-glow 0.5s;
+    animation: locked-glow 3,0s;
 }
 
 @keyframes glowing {

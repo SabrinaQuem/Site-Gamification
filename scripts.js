@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const sounds = [
         { id: 'sound1', file: new Audio('https://www.soundjay.com/nature/sounds/rain-03.mp3'), unlocked: true },
         { id: 'sound2', file: new Audio('https://www.soundjay.com/nature/sounds/ocean-waves-1.mp3'), unlocked: true },
-        { id: 'sound3', file: new Audio('night sound.wav'), unlocked: false, unlockPoints: 10 }
+        { id: 'sound3', file: new Audio('night sound.wav'), unlocked: false, unlockPoints: 10 },
+        { id: 'sound4', file: new Audio('https://www.soundjay.com/nature/sounds/wind-howl-01.mp3'), unlocked: false, unlockPoints: 10 },
+        { id: 'sound5', file: new Audio('https://www.soundjay.com/nature/sounds/river-2.mp3'), unlocked: false, unlockPoints: 20 },
+        { id: 'sound6', file: new Audio('campfire.M4A'), unlocked: false, unlockPoints: 20 },
+        { id: 'sound7', file: new Audio('birds.wav'), unlocked: false, unlockPoints: 30 }
     ];
 
     let points = 0;
