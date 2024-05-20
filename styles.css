@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffce85;
+    background-color: #f4ffcf;
     color: #000000;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -27,20 +27,7 @@ body.night-mode {
 .header h1, .header h2 {
     position: relative;
     z-index: 1;
-    color: white;
-}
-
-.mode-image {
-    display: none;
-    text-align: center;
-}
-
-.light-mode .light-mode-image {
-    display: block;
-}
-
-.night-mode .dark-mode-image {
-    display: block;
+    color: rgb(208, 145, 145);
 }
 
 .container {
@@ -67,13 +54,13 @@ select, button {
     width: 200px;
 }
 
-.sound-buttons {
+.sound-buttons, .music-buttons {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-.sound-button {
+.sound-button, .music-button {
     background: none;
     border: none;
     cursor: pointer;
@@ -81,17 +68,13 @@ select, button {
     transition: transform 0.2s;
 }
 
-.sound-button img {
+.sound-button img, .music-button img {
     width: 50px;
     height: 50px;
 }
 
-.sound-button.active img {
+.sound-button.active img, .music-button.active img {
     animation: glowing 1.5s infinite;
-}
-
-.sound-button.locked {
-    animation: locked-glow 3,0s;
 }
 
 @keyframes glowing {
@@ -100,7 +83,11 @@ select, button {
     100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
 }
 
-@keyframes locked-glow {
+.sound-button.locked img {
+    animation: redGlow 0.5s;
+}
+
+@keyframes redGlow {
     0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
     100% { box-shadow: 0 0 20px rgba(255, 0, 0, 1); }
 }
@@ -124,5 +111,4 @@ select, button {
     padding: 10px;
     border-radius: 5px;
 }
-
 

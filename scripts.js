@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleModeButton = document.getElementById('toggle-mode');
     const pointsDisplay = document.getElementById('points');
     const achievementsList = document.getElementById('achievements-list');
+    const musicButtonsContainer = document.querySelector('.music-buttons');
 
     const backgrounds = [
         { id: 'bg1', url: 'url("https://media.giphy.com/media/t7Qb8655Z1VfBGr5XB/giphy.gif")', unlocked: true },
@@ -18,7 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'sound4', file: new Audio('https://www.soundjay.com/nature/sounds/wind-howl-01.mp3'), unlocked: false, unlockPoints: 10 },
         { id: 'sound5', file: new Audio('https://www.soundjay.com/nature/sounds/river-2.mp3'), unlocked: false, unlockPoints: 20 },
         { id: 'sound6', file: new Audio('campfire.M4A'), unlocked: false, unlockPoints: 20 },
-        { id: 'sound7', file: new Audio('birds.wav'), unlocked: false, unlockPoints: 30 }
+        { id: 'sound7', file: new Audio('birds.wav'), unlocked: false, unlockPoints: 25 }
+    ];
+
+    const music = [
+        { id: 'music1', file: new Audio('music1.mp3'), unlocked: true },
+        { id: 'music2', file: new Audio('music2.wav'), unlocked: true },
+        // Add more music tracks as needed
     ];
 
     let points = 0;
@@ -38,14 +45,36 @@ document.addEventListener('DOMContentLoaded', () => {
         if (points >= 10 && !achievements.includes('First 10 Points')) {
             achievements.push('First 10 Points');
             const li = document.createElement('li');
-            li.textContent = 'First 10 Points';
+            li.textContent = 'First 10 Points! You unlocked more sounds and personalizations!';
             achievementsList.appendChild(li);
         }
         // Add more achievements as needed
+        if (points >= 15 && !achievements.includes('15 Points')) {
+            achievements.push('15 Points');
+            const li = document.createElement('li');
+            li.textContent = '15 points! More and more!';
+            achievementsList.appendChild(li);
+        }
+
+        if (points >= 20 && !achievements.includes('20 Points')) {
+            achievements.push('20 Points');
+            const li = document.createElement('li');
+            li.textContent = '20 points already? You are getting somewhere...';
+            achievementsList.appendChild(li);
+        }
+
+        if (points >= 25 && !achievements.includes('25 Points')) {
+            achievements.push('25 Points');
+            const li = document.createElement('li');
+            li.textContent = 'You could not be more relaxed! 25 points! You earned this musics!';
+            achievementsList.appendChild(li);
+        }
     };
 
     // Function to check and unlock assets
     const checkUnlocks = () => {
+        let allSoundsUnlocked = true;
+
         backgrounds.forEach(bg => {
             if (!bg.unlocked && points >= bg.unlockPoints) {
                 bg.unlocked = true;
@@ -60,7 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const button = document.getElementById(sound.id);
                 button.disabled = false;
             }
+            if (!sound.unlocked) {
+                allSoundsUnlocked = false;
+            }
         });
+
+        if (allSoundsUnlocked) {
+            musicButtonsContainer.style.display = 'block';
+        }
     };
 
     // Initialize backgrounds select options
@@ -111,6 +147,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Handle music button clicks
+    document.querySelectorAll('.music-button').forEach(button => {
+        const selectedMusic = music.find(m => m.id === button.id);
+        button.addEventListener('click', () => {
+            if (activeSounds[selectedMusic.id]) {
+                activeSounds[selectedMusic.id].pause();
+                button.classList.remove('active');
+                delete activeSounds[selectedMusic.id];
+            } else {
+                selectedMusic.file.loop = true;
+                selectedMusic.file.play();
+                activeSounds[selectedMusic.id] = selectedMusic.file;
+                button.classList.add('active');
+                updatePoints(2); // Award 2 points for playing a music track
+            }
+        });
+    });
+
     // Toggle night/light mode
     toggleModeButton.addEventListener('click', () => {
         document.body.classList.toggle('night-mode');
@@ -120,5 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update mode images visibility on initial load
     document.body.classList.add('light-mode');
 });
-   
+
+
 
