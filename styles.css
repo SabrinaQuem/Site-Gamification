@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4ffcf;
+    background-color: #f4772f;
     color: #000000;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -22,22 +22,36 @@ body.night-mode {
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
+    background-image: url('https://media.giphy.com/media/t7Qb8655Z1VfBGr5XB/giphy.gif'); /* Default background */
 }
 
 .header h1, .header h2 {
     position: relative;
     z-index: 1;
-    color: rgb(208, 145, 145);
+    color: rgb(255, 255, 255);
+    font-family: 'Lobster', cursive;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    margin: 10px 0 0;
 }
 
 .container {
     text-align: center;
     margin-top: 20px;
+    padding: 0 20px;
 }
 
 .points {
-    font-size: 20px;
+    font-size: 1.5rem;
     margin: 20px 0;
+    font-weight: 700;
 }
 
 .controls {
@@ -47,11 +61,31 @@ body.night-mode {
 select, button {
     margin: 10px;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid #000;
+    background-color: #000000;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+select:focus, button:focus {
+    outline: none;
+    border-color: #15ab68;
+}
+
+#toggle-mode img {
+    width: 50px;
+    height: auto;
+    background-color: transparent;
 }
 
 #backgrounds {
     width: 200px;
+    background-image: url('background-select.png'); /* New background image for the select container */
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff; 
 }
 
 .sound-buttons, .music-buttons {
@@ -65,7 +99,7 @@ select, button {
     border: none;
     cursor: pointer;
     margin: 0 10px;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .sound-button img, .music-button img {
@@ -83,7 +117,7 @@ select, button {
     100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
 }
 
-.sound-button.locked img {
+.sound-button.locked {
     animation: redGlow 0.5s;
 }
 
@@ -98,6 +132,8 @@ select, button {
 
 .achievements h2 {
     margin-bottom: 10px;
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
 }
 
 .achievements ul {
@@ -110,5 +146,12 @@ select, button {
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
+    color: #fff;
+    font-weight: 400;
+}
+
+/* Button hover and focus states */
+button:hover, select:hover, button:focus, select:focus {
+    transform: scale(1.05);
 }
 

@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Better Relax</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400;700&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="header">
         <h1>Better Relax</h1>
-        <h2>Where you can choose different ways to rest your mind</h2>
+        <h2>Choose different ways to rest your mind</h2>
     </div>
     
     <div class="container">
@@ -19,49 +20,50 @@
 
         <div class="controls">
             <div>
-                <label for="backgrounds">Choose Personalization </label>
+                <label for="backgrounds">Choose Personalization</label>
                 <select id="backgrounds">
                     <!-- Options will be added dynamically by JavaScript -->
                 </select>
             </div>
 
             <div class="sound-buttons">
-                <button id="sound1" class="sound-button">
+                <button id="sound1" class="sound-button" aria-label="Rain">
                     <img src="https://img.icons8.com/ios-filled/50/000000/rain.png" alt="Rain">
                 </button>
-                <button id="sound2" class="sound-button">
+                <button id="sound2" class="sound-button" aria-label="Ocean">
                     <img src="https://static.thenounproject.com/png/5192010-200.png" alt="Ocean">
                 </button>
-                <button id="sound3" class="sound-button">
+                <button id="sound3" class="sound-button" aria-label="Night">
                     <img src="https://png.pngtree.com/png-vector/20230314/ourmid/pngtree-night-icon-vector-png-image_6647395.png" alt="Night">
                 </button>
-                <button id="sound4" class="sound-button">
+                <button id="sound4" class="sound-button" aria-label="Wind">
                     <img src="windIcon.png" alt="Wind">
                 </button>
-                <button id="sound5" class="sound-button">
+                <button id="sound5" class="sound-button" aria-label="River">
                     <img src="river.png" alt="River">
                 </button>
-                <button id="sound6" class="sound-button">
+                <button id="sound6" class="sound-button" aria-label="Campfire">
                     <img src="campfireIcon.png" alt="Campfire">
                 </button>
-                <button id="sound7" class="sound-button">
+                <button id="sound7" class="sound-button" aria-label="Birds">
                     <img src="birdsIcon.png" alt="Birds">
                 </button>
             </div>
 
             <div class="music-buttons" style="display: none;">
                 <h3>Music</h3>
-                <button id="music1" class="music-button">
+                <button id="music1" class="music-button" aria-label="Music 1">
                     <img src="music1icon.png" alt="Music 1">
                 </button>
-                <button id="music2" class="music-button">
+                <button id="music2" class="music-button" aria-label="Music 2">
                     <img src="music2icon.png" alt="Music 2">
                 </button>
-                <!-- Add more music buttons as needed -->
             </div>
 
             <div>
-                <button id="toggle-mode">Toggle Night/Light Mode</button>
+                <button id="toggle-mode">
+                    <img src="https://i.postimg.cc/6QyTynzr/bulb-on.png" alt="Toggle Mode" id="toggle-mode-image">
+                </button>
             </div>
         </div>
 
@@ -76,4 +78,3 @@
     <script src="scripts.js"></script>
 </body>
 </html>
-
